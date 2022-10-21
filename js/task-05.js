@@ -9,6 +9,8 @@ inputText.addEventListener("input", onOutputText);
 
 function onOutputText(event) {
   if (event.currentTarget.value) {
+    // console.log("event.currentTarget.value", event.currentTarget.value.length);
+    // console.log("outputText.textContent", outputText.textContent);
     outputText.textContent = event.currentTarget.value;
     return;
   }
