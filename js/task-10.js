@@ -14,10 +14,8 @@ const inputRef = document.querySelector("#controls > input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 
-let amount = 0;
-inputRef.addEventListener("input", (event) => {
-  amount = event.currentTarget.value;
-});
+let amountInput = 0;
+inputRef.addEventListener("input");
 
 function createBoxes(amount) {
   createBtn.addEventListener("click", (event) => {
