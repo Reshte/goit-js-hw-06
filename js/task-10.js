@@ -29,21 +29,29 @@ function addBoxes(event) {
 }
 
 function createBoxes(amount) {
-  createBtn.addEventListener("click", (event) => {
-    amount = amountInput;
-    for (let i = 0; i < amount; i += 1) {
-      const li = document.createElement("div");
-      li.style.backgroundColor = getRandomHexColor();
-      li.style.width = `${width + i * 10}px`;
-      li.style.height = `${height + i * 10}px`;
-      items.push(li);
-      divEl.append(...items);
-    }
-  });
+  amount = amountInput;
+  for (let i = 1; i <= amount; i += 1) {
+    const li = document.createElement("div");
+    li.style.backgroundColor = getRandomHexColor();
+    li.style.width = `${width + (i - 1) * 10}px`;
+    li.style.height = `${height + (i - 1) * 10}px`;
+    items.push(li);
+    divEl.append(...items);
+  }
 }
 
+// второй вариант
+//  for (let i = 1; i <= total; i += 1) {
+//    size += 10;
+//    const div = document.createElement("div");
+//    div.style.width = size + "px";
+//    div.style.height = size + "px";
+//    div.style.backgroundColor = getRandomHexColor();
+//    markup.push(div);
+//  }
+// boxes.append(...markup);
+
 function destroyBoxes() {
-  destroyBtn.addEventListener("click", (event) => {
-    divEl.querySelectorAll("div").forEach((elem) => elem.remove());
-  });
+  inputRef.value = "";
+  divEl.innerHTML = "";
 }
